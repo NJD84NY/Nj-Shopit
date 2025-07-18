@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
 import cookieParser from 'cookie-parser';
 import qs from 'qs';
 
@@ -23,10 +24,6 @@ process.on('uncaughtException', (err) => {
   console.log('Shutting down due to Uncaught exception');
   process.exit(1);
 });
-
-if (process.env.NODE_ENV !== 'PRODUCTION') {
-  dotenv.config({ path: '.env' });
-}
 
 connectDB();
 
