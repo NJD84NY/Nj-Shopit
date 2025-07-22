@@ -13,10 +13,10 @@ import paymentRoutes from './routes/paymentRoutes.js';
 
 // connect back and front for deployment
 import path from 'path';
-// import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'url';
 
-// const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = pathdirname(__filename);
 
 // Handle Uncaught Exception
 process.on('uncaughtException', (err) => {
