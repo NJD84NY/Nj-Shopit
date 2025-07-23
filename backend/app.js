@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import cookieParser from 'cookie-parser';
 import qs from 'qs';
+import cors from 'cors';
 
 import connectDB from './config/dbConnect.js';
 import errorHandler from './middlewares/errorMiddleware.js';
@@ -30,7 +31,9 @@ connectDB();
 const app = express();
 app.set('query parser', (str) => qs.parse(str));
 
-// app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
 app.use(
   express.json({
     limit: '1mb',
