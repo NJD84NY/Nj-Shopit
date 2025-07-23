@@ -31,7 +31,7 @@ connectDB();
 const app = express();
 app.set('query parser', (str) => qs.parse(str));
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use(
