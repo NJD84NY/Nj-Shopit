@@ -22,7 +22,7 @@ import Invoice from '../invoice/Invoice';
 const userRoutes = () => {
   return (
     <>
-      <Route path='/' element={<Home />} />
+      <Route index={true} path='/' element={<Home />} />
       <Route path='/product/:id' element={<ProductDetails />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
