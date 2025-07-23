@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import cookieParser from 'cookie-parser';
 import qs from 'qs';
-import cors from 'cors';
+// import cors from 'cors';
 
 import connectDB from './config/dbConnect.js';
 import errorHandler from './middlewares/errorMiddleware.js';
@@ -31,8 +31,8 @@ connectDB();
 const app = express();
 app.set('query parser', (str) => qs.parse(str));
 
-app.use(express.urlencoded({ extended: false }));
-app.use(cors());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(cors());
 
 app.use(
   express.json({
@@ -52,7 +52,7 @@ app.use('/api/nj1', paymentRoutes);
 if (process.env.NODE_ENV === 'PRODUCTION') {
   app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-  app.get(/'*'/, (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   });
 }
