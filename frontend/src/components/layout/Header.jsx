@@ -16,7 +16,7 @@ const Header = () => {
 
   const logoutHandler = () => {
     logout();
-    navigate('/');
+    navigate(0);
   };
 
   return (
