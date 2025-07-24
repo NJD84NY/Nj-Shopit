@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useLoginMutation } from '../../redux/api/authApi';
 
@@ -84,9 +84,9 @@ const Login = () => {
           </button>
 
           <div className='my-3'>
-            <a href='/register' className='float-end'>
+            <Link to={'/register'} className='float-end'>
               New User?
-            </a>
+            </Link>
           </div>
         </form>
       </div>
