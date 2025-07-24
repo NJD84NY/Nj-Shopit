@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Search from './Search';
 import { useGetMeQuery } from '../../redux/api/userApi';
-import { useLogoutMutation } from '../../redux/api/authApi';
+import { useLazyLogoutQuery } from '../../redux/api/authApi';
 
 const Header = () => {
   const navigate = useNavigate();
 
   const { isLoading } = useGetMeQuery();
-  const [logout] = useLogoutMutation();
+  const [logout] = useLazyLogoutQuery();
 
   const { user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
