@@ -1,23 +1,22 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import Search from './Search';
 import { useGetMeQuery } from '../../redux/api/userApi';
-import { useLazyLogoutQuery } from '../../redux/api/authApi';
+import { useLogoutMutation } from '../../redux/api/authApi';
 
 const Header = () => {
   const navigate = useNavigate();
 
   const { isLoading } = useGetMeQuery();
-  const [logout] = useLazyLogoutQuery();
+  const [logout] = useLogoutMutation();
 
   const { user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.cart);
 
   const logoutHandler = () => {
     logout();
-    navigate(0);
+    navigate('/login');
   };
 
   return (
@@ -88,7 +87,6 @@ const Header = () => {
 
               <Link
                 className='dropdown-item text-danger'
-                to='/'
                 onClick={logoutHandler}
               >
                 Logout{' '}
