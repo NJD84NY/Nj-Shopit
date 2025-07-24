@@ -87,6 +87,7 @@ const Header = () => {
 
               <Link
                 className='dropdown-item text-danger'
+                to='/'
                 onClick={logoutHandler}
               >
                 Logout{' '}
