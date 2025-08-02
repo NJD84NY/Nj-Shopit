@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { setCartItem, removeCartItem } from '../../redux/features/cartSlice';
+import MetaData from '../layout/MetaData';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -49,6 +50,7 @@ const Cart = () => {
 
   return (
     <>
+      <MetaData title={'Cart'} />
       {cartItems?.length === 0 ? (
         <h2 className='mt-5'>Your Cart is Empty!</h2>
       ) : (

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useGetProductDetailsQuery } from '../../redux/api/productsApi';
 import Loader from '../layout/Loader';
+import MetaData from '../layout/MetaData';
 import { setCartItem } from '../../redux/features/cartSlice';
 import NewReview from '../reviews/NewReview';
 import ListReviews from '../reviews/ListReviews';
@@ -80,6 +81,7 @@ const ProductDetails = () => {
 
   return (
     <>
+      <MetaData title={product?.name} />
       <div className='row d-flex justify-content-around'>
         <div className='col-12 col-lg-5 img-fluid' id='product_image'>
           <div className='p-3'>

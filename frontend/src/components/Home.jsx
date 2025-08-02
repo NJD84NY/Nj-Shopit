@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-// import MetaData from './layout/MetaData';
+import MetaData from './layout/MetaData';
 import { useGetProductsQuery } from '../redux/api/productsApi';
 import ProductItem from './product/ProductItem';
 import Loader from './layout/Loader';
@@ -40,7 +40,7 @@ function Home() {
 
   return (
     <>
-      {/* <MetaData title={'Best Online Purchase'} /> */}
+      <MetaData title={'Best Online Purchase'} />
       <div className='row'>
         {keyword && (
           <div className='col-6 col-md-3 mt-5'>
